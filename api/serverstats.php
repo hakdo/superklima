@@ -18,6 +18,7 @@ $comparekey = file_get_contents('../apikeys.txt');
 if ($apikey==$comparekey) {
     foreach ($cmds as $allowed) {
         if (strpos($cmd, $allowed) !== false) {
+            echo $cmd . "<br>";
             $out = shell_exec($cmd);
             echo $out;
             exit();
