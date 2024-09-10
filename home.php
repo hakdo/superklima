@@ -9,6 +9,29 @@
 <body>
   <div class="container">
     <?php include 'navbar.php'; ?>
+    <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Corridor -->
+  <rect x="50" y="150" width="500" height="50" fill="lightgray" stroke="black" />
+  <text x="275" y="180" font-family="Arial" font-size="14" fill="black">Corridor</text>
+
+  <!-- Board Room -->
+  <rect x="450" y="50" width="100" height="100" fill="lightblue" stroke="black" />
+  <text x="475" y="100" font-family="Arial" font-size="14" fill="black">Board Room</text>
+
+  <!-- Meeting Rooms -->
+  <rect x="50" y="200" width="200" height="100" fill="lightgreen" stroke="black" />
+  <text x="125" y="250" font-family="Arial" font-size="14" fill="black">Meeting Room</text>
+  <rect x="250" y="200" width="200" height="100" fill="lightgreen" stroke="black" />
+  <text x="325" y="250" font-family="Arial" font-size="14" fill="black">Meeting Room</text>
+
+  <!-- Rooms above the Corridor -->
+  <rect x="50" y="50" width="100" height="100" fill="lightcoral" stroke="black" />
+  <text x="75" y="100" font-family="Arial" font-size="14" fill="black">Room 1</text>
+  <rect x="150" y="50" width="150" height="100" fill="lightcoral" stroke="black" />
+  <text x="200" y="100" font-family="Arial" font-size="14" fill="black">Room 2</text>
+  <rect x="300" y="50" width="150" height="100" fill="lightcoral" stroke="black" />
+  <text x="350" y="100" font-family="Arial" font-size="14" fill="black">Room 3</text>
+</svg>
 
     <?php if (!isset($_SESSION['username'])) : ?>
       <h1>Please log in to view this page</h1>
