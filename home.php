@@ -9,14 +9,26 @@
 <body>
   <div class="container">
     <?php include 'navbar.php'; ?>
-    <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+    
+    <?php if (!isset($_SESSION['username'])) : ?>
+      <h1>Please log in to view this page</h1>
+      <p>
+        You need to be logged in to access the dashboard features. Click the
+        button below to log in.
+      </p>
+      <a href="login.php" class="login-button">Login</a>
+    <?php else : ?>
+      <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
+      <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
   <!-- Corridor -->
   <rect x="50" y="150" width="500" height="50" fill="lightgray" stroke="black" />
   <text x="275" y="180" font-family="Arial" font-size="14" fill="black">Corridor</text>
 
   <!-- Board Room -->
-  <rect x="450" y="50" width="100" height="100" fill="lightblue" stroke="black" />
-  <text x="475" y="100" font-family="Arial" font-size="14" fill="black">Board Room</text>
+  <rect x="450" y="50" width="200" height="250" fill="lightblue" stroke="black" />
+  <text x="475" y="100" font-family="Arial" font-size="14" fill="black">
+    <a href="roomdata.php?room=stue">Board Room</a>
+  </text>
 
   <!-- Meeting Rooms -->
   <rect x="50" y="200" width="200" height="100" fill="lightgreen" stroke="black" />
@@ -33,15 +45,6 @@
   <text x="350" y="100" font-family="Arial" font-size="14" fill="black">Room 3</text>
 </svg>
 
-    <?php if (!isset($_SESSION['username'])) : ?>
-      <h1>Please log in to view this page</h1>
-      <p>
-        You need to be logged in to access the dashboard features. Click the
-        button below to log in.
-      </p>
-      <a href="login.php" class="login-button">Login</a>
-    <?php else : ?>
-      <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
       <?php
         // Check if the user is authenticated and an admin
         if ($_SESSION['is_admin']) {
